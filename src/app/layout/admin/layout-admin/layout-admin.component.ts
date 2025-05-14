@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import SidebarComponent from "../sidebar/sidebar.component";
 import HeaderComponent from "../header/header.component";
-import StarredComponent from "../../../admin/starred/starred.component";
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-layout-admin',
-  imports: [SidebarComponent, HeaderComponent, StarredComponent ],
+  imports: [SidebarComponent, HeaderComponent, RouterModule ],
   templateUrl: './layout-admin.component.html',
   styleUrl: './layout-admin.component.scss'
 })

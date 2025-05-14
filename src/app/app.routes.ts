@@ -6,10 +6,11 @@ export const routes: Routes = [
     loadComponent: () => import('./layout/admin/layout-admin/layout-admin.component'),
 
       children:[
+        { path: '', redirectTo: 'starred', pathMatch: 'full' },
+      { path: 'starred', loadComponent: () => import ('./admin/starred/starred.component')},
+      { path: 'recent', loadComponent: () => import ('./admin/recent/recent.component')},
 
-      { path:'', loadComponent: ()  => import('./layout/admin/header/header.component')},
-      { path:'',loadComponent: ()  => import('./layout/admin/layout-admin/layout-admin.component')},
-      { path:'', loadComponent: ()  => import('./layout/admin/sidebar/sidebar.component')},
+      
 
     ]
   },

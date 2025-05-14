@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './starred.component.html',
   styleUrl: './starred.component.scss'
 })
-export class StarredComponent {
+export default class StarredComponent {
 
 }

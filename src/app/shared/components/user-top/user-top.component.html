@@ -1,0 +1,38 @@
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-xl font-bold text-[#3a3a3a]">
+  <span class="icon-[ic--round-plus]"></span>
+</button>
+@for (user of users; track user.name) {
+<button
+  type="button"
+  [attr.aria-label]="user.name"
+  class="flex items-center gap-1.5 border border-gray-300 rounded-full px-2.5 py-1 bg-gray-50 text-gray-700 font-semibold text-xs whitespace-nowrap"
+>
+  @if (user.image) {
+  <img
+    [src]="user.image"
+    [alt]="user.alt"
+    class="w-5 h-5 rounded-full object-cover"
+  />
+  }
+  {{ user.name }}
+</button>
+}
+
+<button
+  type="button"
+  class="w-7 h-7 rounded-full bg-gray-700 text-white font-semibold text-sm flex items-center justify-center"
+>
+  C
+</button>
+
+<div class="ml-auto flex gap-4">
+  @for (action of actions; track action.id) {
+  <button
+    type="button"
+    [id]="action.id"
+    class="w-8 h-8 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center text-sm hover:bg-gray-100"
+  >
+    <span [ngClass]="action.iconClass"></span>
+  </button>
+  }
+</div>

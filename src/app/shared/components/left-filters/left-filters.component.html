@@ -1,0 +1,42 @@
+<div  class="bg-white rounded-2xl p-4 flex flex-col gap-4 flex-1 max-w-[320px] shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+  <div class="flex justify-between items-center">
+    <button
+      aria-label="Sort options"
+      class="flex items-center gap-1 text-[13px] font-semibold text-[#3a3a3a]"
+    >
+      <i class="fas fa-bars"></i>
+      Sort
+      <i class="fas fa-chevron-down text-[10px]"></i>
+    </button>
+    <button
+      aria-label="Filters"
+      class="flex items-center gap-1 text-[13px] font-semibold text-[#3a3a3a]"
+    >
+      Filters
+      <i class="fas fa-sliders-h text-[13px]"></i>
+    </button>
+  </div>
+
+  <ul class="space-y-2 text-[13px] font-semibold text-[#3a3a3a]">
+    @for (item of filters; track item.name) {
+    <li
+      class="flex justify-between items-center border border-gray-300 rounded-lg px-3 py-2"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          [src]="item.image"
+          [alt]="item.alt"
+          width="20"
+          height="20"
+          class="w-5 h-5 rounded-full object-cover"
+        />
+        {{ item.name }}
+      </div>
+      <div class="flex items-center gap-1">
+        <span>{{ item.amount }}</span>
+        <span class="text-[11px] text-gray-400">{{ item.percent }}</span>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

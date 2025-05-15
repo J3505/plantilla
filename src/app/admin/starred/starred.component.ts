@@ -1,9 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { LeftFiltersComponent } from "../../shared/components/left-filters/left-filters.component";
+import { ChartComponent } from "../../shared/components/chart/chart.component";
 
 @Component({
   selector: 'app-starred',
-  imports: [NgClass],
+  imports: [NgClass, LeftFiltersComponent, ChartComponent],
   templateUrl: './starred.component.html',
   styleUrl: './starred.component.scss'
 })

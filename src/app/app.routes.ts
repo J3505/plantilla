@@ -11,9 +11,7 @@ export const routes: Routes = [
       { path: 'recent', loadComponent: () => import ('./admin/recent/recent.component')},
       { path: 'saleslist', loadComponent: () => import ('./admin/saleslist/saleslist.component')},
       { path: 'goals', loadComponent: () => import ('./admin/goals/goals.component')},
-      { path: 'dashboard', loadComponent: () => import ('./admin/dashboard/dashboard.component')},
-
-      
+      { path: 'dashboard', loadComponent: () => import ('./admin/dashboard/dashboard.component')}
 
     ]
   },

@@ -34,7 +34,7 @@
       }
     
         </div>
-        <!-- routerLink="estudiantes" -->
+
         <!-- Codename Section -->
         <div class="mt-6">
           <div class="flex items-center justify-between text-gray-600 py-2">
@@ -42,29 +42,27 @@
             <span class="icon-[meteor-icons--chevron-down] ml-auto w-4 h-4"></span>
           </div>
           <div class="pl-4 space-y-1">
+
             <div class="flex items-center text-gray-600 py-2">
               <span>Codename with me</span>
               <span class="icon-[meteor-icons--chevron-down] ml-auto w-4 h-4"></span>
               
             </div>
+
             <div class="pl-4 space-y-1">
-              <div class="flex items-center text-gray-600 py-1">
-                <span>Cargo2go</span>
-              </div>
-              <div class="flex items-center text-gray-600 py-1">
-                <span>Cloud23r</span>
-                <div class="ml-auto bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">2</div>
-              </div>
-              <div class="flex items-center text-gray-600 py-1">
-                <span>Idioma</span>
-              </div>
-              <div class="flex items-center text-gray-600 py-1">
-                <span>Syllables</span>
-              </div>
-              <div class="flex items-center text-gray-600 py-1">
-                <span>x-0b</span>
-              </div>
+
+              @for (company of companies; track company.name) {
+                  <div class="flex items-center text-gray-600 py-1">
+                    <span>{{ company.name }}</span>
+                    @if (company.badge) {
+                      <div class="ml-auto bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        {{ company.badge }}
+                      </div>
+                    }
+                  </div>
+                }
             </div>
+
           </div>
         </div>
         
@@ -84,7 +82,6 @@
             <span class="icon-[ant-design--message-filled]"></span>
           </div>
           <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
-            <span class="icon-[meteor-icons--chevron-down]"></span>
             <span class="icon-[majesticons--settings-cog]"></span>
           </div>
         </div>

@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NgClass],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -38,5 +38,13 @@ export default class SidebarComponent {
       icon: 'icon-[mage--dashboard]',
       extraIcon: 'icon-[ic--round-plus]',
     },
+  ];
+
+  companies = [
+    { name: 'Cargo2go' },
+    { name: 'Cloud23r', badge: 2 },
+    { name: 'Idioma' },
+    { name: 'Syllables' },
+    { name: 'x-0b' },
   ];
 }

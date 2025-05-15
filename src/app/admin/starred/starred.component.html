@@ -1,27 +1,48 @@
 <section class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-     <div class="flex items-center gap-2 flex-wrap">
-      <button aria-label="Add filter" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-xl font-bold text-[#3a3a3a]">
-       +
+  <div    class="flex items-center gap-2 px-4 py-3"  >
+        <button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-xl font-bold text-[#3a3a3a]">
+         <span class="icon-[ic--round-plus]"></span>
+        </button>
+         @for (user of users; track user.name) {
+           <button
+             type="button"
+             [attr.aria-label]="user.name"
+             class="flex items-center gap-1.5 border border-gray-300 rounded-full px-2.5 py-1 bg-gray-50 text-gray-700 font-semibold text-xs whitespace-nowrap"
+           >
+             @if (user.image) {
+               <img
+                 [src]="user.image"
+                 [alt]="user.alt"
+                 class="w-5 h-5 rounded-full object-cover"
+               />
+             }
+             {{ user.name }}
+           </button>
+         }
+
+      <button
+        type="button"
+        class="w-7 h-7 rounded-full bg-gray-700 text-white font-semibold text-sm flex items-center justify-center"
+      >
+        C
       </button>
-      <div class="flex items-center gap-2 border border-gray-300 rounded-full px-3 py-1 text-[13px] font-semibold text-[#3a3a3a]">
-       <img alt="Avatar of Armin A." class="w-6 h-6 rounded-full object-cover" height="24" src="https://storage.googleapis.com/a1aa/image/3f852b95-7b9c-4728-5261-e1414b58e97b.jpg" width="24"/>
-       Armin A.
+
+      <div class="ml-auto flex gap-4">
+        @for (action of actions; track action.id) {
+          <button
+            type="button"
+            [id]="action.id"
+            class="w-8 h-8 rounded-full border border-gray-300 bg-white text-gray-700 flex items-center justify-center text-sm hover:bg-gray-100"
+          >
+            <span [ngClass]="action.iconClass"></span>
+          </button>
+        }
       </div>
-      <div class="flex items-center gap-2 border border-gray-300 rounded-full px-3 py-1 text-[13px] font-semibold text-[#3a3a3a]">
-       <img alt="Avatar of Eren Y." class="w-6 h-6 rounded-full object-cover" height="24" src="https://storage.googleapis.com/a1aa/image/48f72356-3eaf-4270-887b-3145c986fa07.jpg" width="24"/>
-       Eren Y.
-      </div>
-      <div class="flex items-center gap-2 border border-[#3a9be9] rounded-full px-3 py-1 text-[13px] font-semibold text-[#3a9be9]">
-       <img alt="Avatar of Mikasa A." class="w-6 h-6 rounded-full object-cover" height="24" src="https://storage.googleapis.com/a1aa/image/5ebd52cc-3b07-4210-2232-32cca21b3951.jpg" width="24"/>
-       Mikasa A.
-      </div>
-      <button aria-label="Clear filters" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-xl font-bold text-[#3a3a3a]">
-       C
-      </button>
-     </div>
-     <h2 class="text-[20px] font-semibold text-[#b0b0b0]">
-      New report
-     </h2>
+  </div>
+     <!--  -->
+
+     <h2 class="text-[20px] font-semibold text-[#b0b0b0]">New report</h2>
+
      <div class="flex flex-wrap items-center gap-4">
       <div class="flex flex-col">
        <span class="text-[13px] font-semibold text-[#3a3a3a]">
@@ -71,7 +92,9 @@
        </button>
       </div>
      </div>
+
      <div class="flex flex-wrap items-center gap-4 text-[13px] font-semibold text-[#3a3a3a]">
+
       <div class="bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-3 min-w-[120px] flex flex-col gap-1">
        <div class="flex justify-between items-center mb-1">
         <span class="text-[11px] font-normal text-[#3a3a3a]">
@@ -89,6 +112,7 @@
         </span>
        </div>
       </div>
+
       <div class="bg-black rounded-lg p-3 min-w-[140px] flex flex-col gap-1 text-white">
        <div class="flex justify-between items-center mb-1">
         <span class="text-[11px] font-normal">
@@ -108,6 +132,7 @@
         </span>
        </div>
       </div>
+
       <div class="bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-3 min-w-[80px] flex flex-col gap-1 text-center">
        <span class="text-[11px] font-normal text-[#3a3a3a]">
         Deals
@@ -121,6 +146,8 @@
         5
        </span>
       </div>
+
+
       <div class="bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-3 min-w-[80px] flex flex-col gap-1 text-center border-2 border-[#c72c56]">
        <span class="text-[11px] font-normal text-[#3a3a3a]">
         Value
@@ -134,6 +161,7 @@
         7.9%
        </span>
       </div>
+
       <div class="bg-white rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-3 min-w-[80px] flex flex-col gap-1 text-center">
        <span class="text-[11px] font-normal text-[#3a3a3a]">
         Win rate
@@ -147,13 +175,16 @@
         1.2%
        </span>
       </div>
+
       <button class="ml-auto flex items-center gap-2 border border-gray-900 rounded-full px-4 py-1 text-[13px] font-semibold text-white bg-black">
        Details
       </button>
+
      </div>
-    </section>
-    <!-- Filters and charts row -->
-    <section class="flex flex-col md:flex-row gap-4">
+
+</section>
+<!-- Filters and charts row -->
+<section class="flex flex-col md:flex-row gap-4">
      <!-- Left filters -->
      <div class="bg-white rounded-2xl p-4 flex flex-col gap-4 flex-1 max-w-[320px] shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
       <div class="flex justify-between items-center">
@@ -264,9 +295,9 @@
        </span>
       </p>
      </div>
-    </section>
-    <!-- Bottom section -->
-    <section class="bg-white rounded-2xl p-6 flex flex-col gap-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+</section>
+<!-- Bottom section -->
+<section class="bg-white rounded-2xl p-6 flex flex-col gap-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
      <!-- Platform value and chart -->
      <div class="flex flex-col md:flex-row gap-4">
       <div class="bg-[#c72c56] text-white rounded-l-2xl p-4 flex flex-col gap-2 min-w-[160px]">
@@ -572,4 +603,4 @@
        </div>
       </div>
      </div>
-    </section>
+</section>

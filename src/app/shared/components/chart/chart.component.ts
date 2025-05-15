@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-chart',
   imports: [],
   templateUrl: './chart.component.html',
-  styleUrl: './chart.component.scss'
+  styleUrl: './chart.component.scss',
+  host:{
+    class:'flex flex-col md:flex-row gap-4'
+  }
 })
 export class ChartComponent {
    logos = [

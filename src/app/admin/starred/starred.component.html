@@ -1,36 +1,31 @@
-<section class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-  <div    class="flex items-center gap-2 px-4 py-3"  >
-        <app-user-top></app-user-top>
-  </div>
-     <!--  -->
+<section  class="bg-white rounded-2xl p-6 flex flex-col gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+  <!--  -->
+  <app-user-top></app-user-top>
 
-     <h2 class="text-[20px] font-semibold text-[#b0b0b0]">New report</h2>
-
-     <div class="flex flex-wrap items-center gap-4">
-      <app-revenue ></app-revenue>
-     </div>
-
-     <div class="flex flex-wrap items-center gap-4 text-[13px] font-semibold text-[#3a3a3a]">
-        <app-top-sales></app-top-sales>
-     </div>
+  <h2 class="text-[20px] font-semibold text-[#b0b0b0]">New report</h2>
+  <!--  -->
+  <app-revenue></app-revenue>
+  <!--  -->
+  <app-top-sales></app-top-sales>
 
 </section>
 <!-- Filters and charts row -->
-<section class="flex flex-col md:flex-row gap-4">
-     <!-- Left filters -->
-      <app-left-filters></app-left-filters>
-     <!-- Middle chart -->
-     <app-chart></app-chart>
+<section class=" flex p-4 gap-4">
+  <!-- Left filters -->
+  <app-left-filters></app-left-filters>
+  <!-- Middle chart -->
+  <app-chart></app-chart>
+
 </section>
 <!-- Bottom section -->
 <section class="bg-white rounded-2xl p-6 flex flex-col gap-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-     <!-- Platform value and chart -->
-     <div class="flex flex-col md:flex-row gap-4">
-      <app-plataform></app-plataform>
-     </div>
-     <!-- Right side -->
-     <div class="flex flex-col gap-4">
-      <app-right-side></app-right-side>
-     </div>
+  <!-- Platform value and chart -->
+  
+    <app-plataform></app-plataform>
 
+  <!-- Right side -->
+  <div class="flex flex-col gap-4">
+    <app-right-side></app-right-side>
+  </div>
+  
 </section>

@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-left-filters',
   imports: [],
   templateUrl: './left-filters.component.html',
-  styleUrl: './left-filters.component.scss'
+  styleUrl: './left-filters.component.scss',
+  host:{
+    class:'flex flex-col md:flex-row gap-4'
+  }
 })
 export class LeftFiltersComponent {
    filters = [

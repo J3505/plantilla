@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
   selector: 'app-user-top',
   imports: [NgClass],
   templateUrl: './user-top.component.html',
-  styleUrl: './user-top.component.scss'
+  styleUrl: './user-top.component.scss',
+  host:{
+    class:'flex items-center gap-2 px-4 py-3'
+  }
 })
 export class UserTopComponent {
   users = [
